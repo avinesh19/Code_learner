@@ -1,0 +1,11 @@
+- hosts: node1
+  become: true
+  tasks:
+  - name: set permission on cron file
+    file:
+    path: /etc/cron.d
+    state: touch
+    owner: root
+    group: root
+    mode: 0700
+    ignore_errors: yes
