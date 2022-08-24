@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  become: true
+  tasks:
+  - name: Install VMware tools
+    yum: pkg="open-vm-tools" state=present
+
+  - name: Enabling and starting -> VMtools
+    service: name=vmtoolsd enabled=yes state=started
