@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  tasks:
+  - name: Modift Hosts File
+    lineinfile:
+      dest: /etc/hosts
+      line: '192.xx.xx.10 server2.example.com'
